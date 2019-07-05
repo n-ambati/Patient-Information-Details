@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            h1 {
+                border: 2px solid black;
+                padding: 10px;
+                text-align: center;
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Patient Information Form</h1>
+            <div id="patient-details">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        Patient Id:
+                        <input type="number" name="id">
+                    </div>
+                    <div class="form-group">
+                        First Name:
+                        <input type="text" name="firstname">
+                    </div>
+                    <div class="form-group">
+                        Last Name:
+                        <input type="text" name="lastname">
+                    </div>
+                    <div class="form-group">
+                        Age:
+                        <input type="number" name="age">
+                    </div>
+                    <div class="form-group">
+                        Sex:
+                        <select name="sex" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        Telephone:
+                        <input type="tel" name="telephone">
+                    </div>
+                    <div class="form-group">
+                        City/Village:
+                        <input type="text" name="city">
+                    </div>
+                    <div class="form-group">
+                        Profession:
+                        <input type="text" name="profession">
+                    </div>
+                    <div class="form-group">
+                        Blood Group:
+                        <select name="blood-group" id="blood-group">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B_">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        Pregnancy:
+                        <select name="pregnancy">
+                            <option value="Not Valid">Not Valid</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        Prescription:
+                        <input accept="image/*" type="file" name="prescription">
+                    </div>
+                    <div class="form-group">
+                        Lab data attachment:
+                        <input accept="image/*" type="file" name="lab-file">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+
+            <form action="/search/" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="submit" value="search">
+                </div>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
